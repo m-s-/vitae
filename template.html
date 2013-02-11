@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<title>{{ page.title }}</title>
+
+  	<meta name="author" content="{{ site.author.name }}" />
+  	<meta name="description" content="{{ site.description }}" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+  	<link href="css/up.css" rel="stylesheet"/>
+
+  	<script type="css">
+  	  		
+  	</script>
+</head>
+<body>
+	<header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">{{ site.title }}</a>
+        <ul class="nav">
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/snippets">Snippets</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li>
+            <a href="https://github.com/{{ site.author.github }}" title="Github">
+              <i class="icon-github icon-large"></i>
+            </a>
+          </li>
+
+		  <li>
+            <a href="https://linkedin.com/{{ site.author.linkedin }}" title="LinkedIn">
+              <i class="icon-linkedin icon-large"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/{{ site.author.twitter }}" title="Twitter">
+              <i class="icon-twitter icon-large"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    {{ content }}
+
+    <section class="content">
+	  <h1>
+	    <a href="{{ page.url }}">{{ page.title }}</a>
+	  </h1>
+
+	  <section class="byline">
+	    {{ page.date | date: "%B %e, %Y" }}
+	  </section>
+
+	  {{ content }}
+	  <div class="pull"></div>
+	  {% include twitter.html %}
+	  
+	</section>
+
+  </div>
+
+  <footer>
+    <section class="meta">
+      <div class="container">
+        <div class="row">
+          
+          
+            (c) {{ site.title }}
+          
+          
+        </div>
+      </div>
+    </section>
+  </footer>
+
+
+</body>
+</html>
